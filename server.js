@@ -1,7 +1,6 @@
 const express = require('express');
 //instantiate the server 
 const PORT = process.env.PORT || 3001;
-
 const app = express();
 const { animals } = require('./data/animals');
 
