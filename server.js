@@ -14,6 +14,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 //parse incoming JSON data
 app.use(express.json());
+//add static to include css and js files within PUBLIC folder along with html!
+app.use(express.static('public'));
+
 
 function filterByQuery(query, animalsArray) {
     let personalityTraitsArray = [];
@@ -125,9 +128,23 @@ app.post('/api/animals', (req, res) => {
         res.json(animal);
     }
 });
-// get html 
+// get index.html connected
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './public/index/html'));
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+//get animals.html connected
+app.get('/animals', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+// get zookepers.html connected
+app.get('/zookeepers', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+});
+
+// if a client makes a request for a route that doesn't exist. The * will act as a wildcard, meaning any route that wasn't previously defined will fall under this request and will receive the homepage as the response.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
 app.listen(PORT, () => {

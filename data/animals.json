@@ -153,6 +153,15 @@
         "hungry"
       ],
       "id": "15"
+    },
+    {
+      "name": "Bik",
+      "species": "bull",
+      "diet": "herbivore",
+      "personalityTraits": [
+        "goofy"
+      ],
+      "id": "16"
     }
   ]
 }
