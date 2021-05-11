@@ -1,8 +1,9 @@
-const { query } = require('express');
-const express = require('express');
-const { animals } = require('./data/animals');
+// const { query } = require('express');
 const fs = require('fs');
 const path = require('path');
+const express = require('express');
+const { animals } = require('./data/animals');
+
 
 //instantiate the server
 const PORT = process.env.PORT || 3001;
@@ -57,7 +58,7 @@ function filterByQuery(query, animalsArray) {
 }
 
 function findById(id, animalsArray) {
-    const result = animalsArray.filter(animal => animal.id === id[0]);
+    const result = animalsArray.filter(animal => animal.id === id)[0];
     return result;
 }
 
@@ -68,29 +69,28 @@ function createNewAnimal(body, animalsArray) {
         path.join(__dirname, './data/animals.json'),
         JSON.stringify({ animals: animalsArray }, null, 2)
     );
-
-    // validation
-    function validateAnimal(animal) {
-        if (!animal.name || typeof animal.name !== 'string') {
-            return false;
-        }
-        if (!animal.species || typeof animal.species !== 'string') {
-            return false;
-        }
-        if (!animal.diet || typeof animal.diet !== 'string') {
-            return false;
-        }
-        if (!animal.personalityTraits || !Array.isArray(animal.personalityTraits)) {
-            return false;
-        }
-        return true;
-    }
-    // console.log(body);
-    //our function's main code will go here!
-
     //return finished code to post route for response
     return animal;
 }
+
+// validation
+function validateAnimal(animal) {
+    if (!animal.name || typeof animal.name !== 'string') {
+        return false;
+    }
+    if (!animal.species || typeof animal.species !== 'string') {
+        return false;
+    }
+    if (!animal.diet || typeof animal.diet !== 'string') {
+        return false;
+    }
+    if (!animal.personalityTraits || !Array.isArray(animal.personalityTraits)) {
+        return false;
+    }
+    return true;
+}
+// console.log(body);
+//our function's main code will go here!
 
 // add the route (the get() method requires two arguments. The first is a string that describes the route the client will have to fetch from. The second is a callback function that will execute every time that route is accessed with a GET request. We are using the send () method from the res parameter (short for response) to send the string Hello! to our client.)
 app.get('/api/animals', (req, res) => {
@@ -124,7 +124,6 @@ app.post('/api/animals', (req, res) => {
         // console.log(req.body);
         res.json(animal);
     }
-
 });
 
 app.listen(PORT, () => {
