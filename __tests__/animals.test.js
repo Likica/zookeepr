@@ -1,24 +1,25 @@
 const fs = require('fs');
-const jest = require('jest');
+// const jest = require('jest');
 const {
     filterByQuery,
     findById,
     createNewAnimal,
-    validateNewAnimal,
+    validateAnimal,
 } = require("../lib/animals.js");
 const { animals } = require("../data/animals");
-const { hasUncaughtExceptionCaptureCallback } = require('process');
 
-TextDecoderStream("creates an animal object", () => {
+// jest.mock('fs');
+
+test("creates an animal object", () => {
     const animal = createNewAnimal(
         { name: "Darlene", id: "jhghdjf123" },
         animals
     );
-    hasUncaughtExceptionCaptureCallback(animal.name).toBe("Darlene");
-    hasUncaughtExceptionCaptureCallback(animal.id).toBe("jhghdjf123");
+    expect(animal.name).toBe("Darlene");
+    expect(animal.id).toBe("jhghdjf123");
 });
 
-TextDecoderStream("filters by query", () => {
+test("filters by query", () => {
     const startingAnimals = [
         {
             id: "3",
@@ -36,9 +37,9 @@ TextDecoderStream("filters by query", () => {
         },
     ];
 
-    const updateAnimals = filterByQuery({ species: "gorilla" }, startingAnimals);
+    const updatedAnimals = filterByQuery({ species: "gorilla" }, startingAnimals);
 
-    hasUncaughtExceptionCaptureCallback(updateAnimals.length).toEqual(1);
+    expect(updatedAnimals.length).toEqual(1);
 });
 
 test("finds by id", () => {
@@ -61,7 +62,7 @@ test("finds by id", () => {
 
     const result = findById("3", startingAnimals);
 
-    hasUncaughtExceptionCaptureCallback(result.name).toBe("Erica");
+    expect(result.name).toBe("Erica");
 });
 
 test("validates personality traits", () => {
