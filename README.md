@@ -1,6 +1,23 @@
-# Zookeepr
-  ### By likica * [Email me](mailto:fahrija_wyroski@live.com) * 
-  * [Deployed Appplication](n/a)
+<h1 align='center'>Zookeepr</h1>
+  ### By Likica * [Email me](mailto:fahrija_wyroski@live.com) * 
+  * [My GitHub Profile](https://github/com/likica)
+  <br></br>
+
+<p align="center">
+    <img src="https://img.shields.io/github/repo-size/likica/zookeepr" />
+    <img src="https://img.shields.io/github/issues/likica/zookeepr" />
+    <img src="https://img.shields.io/github/last-commit/likica/zookeepr" >
+    </a>
+</p>
+  
+<p align="center">
+<img src="https://img.shields.io/badge/-node.js-green" />
+    <img src="https://img.shields.io/badge/Javascript-blue" />
+    <img src="https://img.shields.io/badge/-json-pink" />
+    <img src="https://img.shields.io/badge/jQuery-purple"  />
+    <img src="https://img.shields.io/badge/Express.js-red" >
+
+</p>
  
   ## Table of contents
   * [Description](#Description)
@@ -20,11 +37,12 @@
 
   ## Installation Instructions
   ##### [Back to Table of Contents](#Table-of-Contents)
-  No need to install
+  No need to install, just use URL link to access the application [Click here](https://github.com/likica/zookeepr)
 
   ## Usage Instructions
   ##### [Back to Table of Contents](#Table-of-Contents)
-  1. Open the application's URL in web broser 2. Search for specific animal(s) by name, species, diet and/or personality traits. Or, search for zookeepers by name, id, age or their favorite animal(s). You can also add new animal(s) and/or zookepeer(s)
+  1. Open the application's URL in web broser 
+  2. Search for specific animal(s) by name, species, diet and/or personality traits. Or, search for zookeepers by name, id, age or their favorite animal(s). You can also add new animal(s) and/or zookepeer(s)
 
   ## Contributing
   ##### [Back to Table of Contents](#Table-of-Contents)
