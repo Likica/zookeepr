@@ -1,5 +1,8 @@
 <h1 align='center'>Zookeepr</h1>
-  ### By Likica * [Email me](mailto:fahrija_wyroski@live.com) * 
+  ### By Likica 
+  
+  * [Email me](mailto:codefin9@hotmail.com)
+  
   * [My GitHub Profile](https://github/com/likica)
   <br></br>
 
@@ -55,7 +58,7 @@
 
   ## Questions
   ##### [Back to Table of Contents](#Table-of-Contents)
-  * If you have any questions, please contact me at fahrija_wyroski@live.com
+  * If you have any questions, please [Email me](mailto:codefin9@hotmail.com)
 
   ## License 
   * License Type: MIT
